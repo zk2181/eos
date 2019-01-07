@@ -11,6 +11,7 @@ class AdminHandler(tornado.web.RequestHandler):
         self.render("admin.html")
     def post(self):
         tabledate = self.get_argument("htmldate")
-        table_infos = mwd.creat_table(tablename="new")
+        #table_infos = mwd.creat_table(tablename="new")
+        table_infos = mwd.creat_table(tablename=tabledate)
         #self.write(table_infos)
         self.redirect('/admin')
